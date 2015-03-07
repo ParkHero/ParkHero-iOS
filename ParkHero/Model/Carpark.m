@@ -21,6 +21,7 @@
         self.capacity = [aDecoder decodeIntegerForKey:@"capacity"];
         self.free = [aDecoder decodeIntegerForKey:@"free"];
         self.cost = [aDecoder decodeIntegerForKey:@"cost"];
+        self.address = [aDecoder decodeObjectForKey:@"address"];
     }
     return self;
 }
@@ -35,6 +36,17 @@
     [aCoder encodeInteger:self.capacity forKey:@"capacity"];
     [aCoder encodeInteger:self.free forKey:@"free"];
     [aCoder encodeInteger:self.cost forKey:@"cost"];
+    [aCoder encodeObject:self.address forKey:@"address"];
+}
+
+- (void)downloadImage:(NSString *)url {
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse* response,
+                                               NSData* data,
+                                               NSError* error) {
+                               self.image = [[UIImage alloc] initWithData:data];
+                           }];
 }
 
 @end

@@ -19,7 +19,7 @@
                                                NSError* error) {
                                NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
                                if (!error && httpResponse.statusCode >= 200 && httpResponse.statusCode <= 299 && data) {
-                                   NSLog(@"Response: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+                                   //NSLog(@"Response: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
                                    completion(YES, data, nil);
                                } else {
                                    NSLog(@"Request failed.");

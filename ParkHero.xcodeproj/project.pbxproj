@@ -11,6 +11,7 @@
 		9A1C55D81AAB1BD500EDF846 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C55D71AAB1BD500EDF846 /* LoginViewController.m */; };
 		9A1C55DE1AAB20F300EDF846 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C55DD1AAB20F300EDF846 /* User.m */; };
 		9A1C55E21AAB217D00EDF846 /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C55E11AAB217D00EDF846 /* UserDefaults.m */; };
+		9A25DFE81AAB89F50082E065 /* UIBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A25DFE71AAB89F50082E065 /* UIBAlertView.m */; };
 		9A88862E1AAB36FB00DDC0BF /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88862D1AAB36FB00DDC0BF /* CustomTextField.m */; };
 		9A8886311AAB4D5A00DDC0BF /* Carpark.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8886301AAB4D5A00DDC0BF /* Carpark.m */; };
 		9A8886341AAB523900DDC0BF /* RequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8886331AAB523900DDC0BF /* RequestHelper.m */; };
@@ -37,6 +38,8 @@
 		9A1C55DD1AAB20F300EDF846 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		9A1C55E01AAB217D00EDF846 /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
 		9A1C55E11AAB217D00EDF846 /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
+		9A25DFE61AAB89F50082E065 /* UIBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBAlertView.h; sourceTree = "<group>"; };
+		9A25DFE71AAB89F50082E065 /* UIBAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBAlertView.m; sourceTree = "<group>"; };
 		9A88862C1AAB36FB00DDC0BF /* CustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTextField.h; sourceTree = "<group>"; };
 		9A88862D1AAB36FB00DDC0BF /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTextField.m; sourceTree = "<group>"; };
 		9A88862F1AAB4D5A00DDC0BF /* Carpark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Carpark.h; sourceTree = "<group>"; };
@@ -122,6 +125,23 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		9A25DFE41AAB89F50082E065 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				9A25DFE51AAB89F50082E065 /* UIBAlertView */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		9A25DFE51AAB89F50082E065 /* UIBAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				9A25DFE61AAB89F50082E065 /* UIBAlertView.h */,
+				9A25DFE71AAB89F50082E065 /* UIBAlertView.m */,
+			);
+			path = UIBAlertView;
+			sourceTree = "<group>";
+		};
 		9A8886281AAB316800DDC0BF /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +196,7 @@
 				9A8886481AAB6FAD00DDC0BF /* Config */,
 				9A1C55D51AAB1AF200EDF846 /* Controller */,
 				9A1C55DF1AAB215100EDF846 /* Helper */,
+				9A25DFE41AAB89F50082E065 /* Libs */,
 				9A1C55DA1AAB1CE900EDF846 /* Model */,
 				9A8886281AAB316800DDC0BF /* View */,
 				9ABEBCB71AAB127500866696 /* AppDelegate.h */,
@@ -238,6 +259,7 @@
 				TargetAttributes = {
 					9ABEBCAF1AAB127500866696 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 5EFBK52YD3;
 					};
 				};
 			};
@@ -320,6 +342,7 @@
 				9A88862E1AAB36FB00DDC0BF /* CustomTextField.m in Sources */,
 				9ABEBCB61AAB127500866696 /* main.m in Sources */,
 				9A88863A1AAB551700DDC0BF /* MainNavigationController.m in Sources */,
+				9A25DFE81AAB89F50082E065 /* UIBAlertView.m in Sources */,
 				9A8886341AAB523900DDC0BF /* RequestHelper.m in Sources */,
 				9A88864B1AAB6FB900DDC0BF /* API.m in Sources */,
 				9A1C55D81AAB1BD500EDF846 /* LoginViewController.m in Sources */,
@@ -421,6 +444,7 @@
 			baseConfigurationReference = 15A1295BBF600B517849E2B1 /* Pods-ParkHero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "ParkHero/ParkHero-Prefix.pch";
 				INFOPLIST_FILE = ParkHero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -433,6 +457,7 @@
 			baseConfigurationReference = 0AD28B53E38E74A490438AF4 /* Pods-ParkHero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "ParkHero/ParkHero-Prefix.pch";
 				INFOPLIST_FILE = ParkHero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

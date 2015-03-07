@@ -11,6 +11,7 @@
 #import "User.h"
 #import "MainNavigationController.h"
 #import "LoadingViewController.h"
+#import "UIBAlertView.h"
 
 @interface LoginViewController () <LoginViewDelegate>
 @end
@@ -42,14 +43,17 @@
     NSData *json = [NSJSONSerialization dataWithJSONObject:jsonDict options:NSJSONWritingPrettyPrinted error:nil];
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[API registerUrl]]];
     [request setHTTPMethod:@"POST"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:json];
     
     [RequestHelper startRequest:request completion:^(BOOL success, NSData *data, NSError *error) {
         if (success) {
             [self storeUserAndStartApp:data];
         } else {
-            // TODO handle error
+            [_loadingViewController closeWithCompletion:^{
+                UIBAlertView *av = [[UIBAlertView alloc] initWithTitle:@"Registration Failed" message:@"Please check your provided data and try again." cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                [av showWithDismissHandler:^(NSInteger selectedIndex, NSString *selectedTitle, BOOL didCancel) {
+                }];
+            }];
         }
     }];
 }
@@ -64,14 +68,17 @@
     NSData *json = [NSJSONSerialization dataWithJSONObject:jsonDict options:NSJSONWritingPrettyPrinted error:nil];
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[API loginUrl]]];
     [request setHTTPMethod:@"POST"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:json];
     
     [RequestHelper startRequest:request completion:^(BOOL success, NSData *data, NSError *error) {
         if (success) {
             [self storeUserAndStartApp:data];
         } else {
-            // TODO handle error
+            [_loadingViewController closeWithCompletion:^{
+                UIBAlertView *av = [[UIBAlertView alloc] initWithTitle:@"Login Failed" message:@"Please check your email address and password." cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                [av showWithDismissHandler:^(NSInteger selectedIndex, NSString *selectedTitle, BOOL didCancel) {
+                }];
+            }];
         }
     }];
 }

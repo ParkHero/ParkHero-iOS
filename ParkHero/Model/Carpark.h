@@ -24,5 +24,8 @@ typedef enum {
 @property (nonatomic) NSInteger capacity;
 @property (nonatomic) NSInteger free;
 @property (nonatomic) NSInteger cost;
+@property (nonatomic) NSString *address;
+
+- (void)downloadImage:(NSString *)url;
 
 @end

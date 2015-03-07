@@ -36,7 +36,7 @@
     _imageView.contentMode = UIViewContentModeScaleAspectFit;
     [_container addSubview:_imageView];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, _container.frame.size.width, 60)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, _container.frame.size.width - 80, _container.frame.size.width, 60)];
     label.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
     label.textColor = [UIColor colorWithWhite:0.6 alpha:1.0];
     label.textAlignment = NSTextAlignmentCenter;

@@ -32,10 +32,12 @@
         _emailField = [self createTextField];
         _emailField.returnKeyType = UIReturnKeyNext;
         _emailField.placeholder = @"Email";
+        _emailField.autocapitalizationType = UITextAutocapitalizationTypeNone;
         _passwordField = [self createTextField];
         _passwordField.returnKeyType = UIReturnKeyDone;
         _passwordField.secureTextEntry = YES;
         _passwordField.placeholder = @"Password";
+        _passwordField.autocapitalizationType = UITextAutocapitalizationTypeNone;
         
         _registerButton = [[UIButton alloc] init];
         _registerButton.layer.cornerRadius = 6;
@@ -72,7 +74,7 @@
     _passwordField.frame = CGRectMake(50, y, self.frame.size.width - 100, 35);
     y += 42;
     
-    y = self.frame.size.height - 90;
+    y = self.frame.size.height - 100;
     _registerButton.frame = CGRectMake(50, y, self.frame.size.width - 100, 35);
     
     y += 42;
@@ -88,6 +90,7 @@
     field.layer.borderColor = [UIColor colorWithWhite:0.8 alpha:1.0].CGColor;
     field.edgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
     field.delegate = self;
+    field.clearButtonMode = UITextFieldViewModeWhileEditing;
     [self addSubview:field];
     return field;
 }

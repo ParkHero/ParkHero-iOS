@@ -12,5 +12,6 @@
 
 + (NSString *)registerUrl;
 + (NSString *)loginUrl;
++ (NSString *)carparkListUrl;
 
 @end

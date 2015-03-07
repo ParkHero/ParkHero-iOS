@@ -22,4 +22,8 @@
     return [[self baseUrl] stringByAppendingString:@"/users/login"];
 }
 
++ (NSString *)carparkListUrl {
+    return [[self baseUrl] stringByAppendingString:@"/carparks"];
+}
+
 @end
