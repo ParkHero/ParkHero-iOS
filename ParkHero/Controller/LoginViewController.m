@@ -77,6 +77,10 @@
 }
 
 - (void)storeUserAndStartApp:(NSData *)data {
+    UIView *overlay = [[UIView alloc] initWithFrame:self.view.bounds];
+    overlay.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:overlay];
+    
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     NSDictionary *jsonUser = json[@"user"];
     User *user = [[User alloc] init];
