@@ -14,6 +14,9 @@
 		9A25DFE81AAB89F50082E065 /* UIBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A25DFE71AAB89F50082E065 /* UIBAlertView.m */; };
 		9A25DFEB1AAB9FF70082E065 /* DirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A25DFEA1AAB9FF70082E065 /* DirectionsViewController.m */; };
 		9A25DFEE1AABAA140082E065 /* TargetAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A25DFED1AABAA140082E065 /* TargetAnnotation.m */; };
+		9A25DFF11AABB3CD0082E065 /* DirectionsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A25DFF01AABB3CD0082E065 /* DirectionsMapViewController.m */; };
+		9A25DFF41AABB5940082E065 /* DirectionsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A25DFF31AABB5940082E065 /* DirectionsListViewController.m */; };
+		9A25DFF71AABB9090082E065 /* StepCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A25DFF61AABB9090082E065 /* StepCell.m */; };
 		9A88862E1AAB36FB00DDC0BF /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88862D1AAB36FB00DDC0BF /* CustomTextField.m */; };
 		9A8886311AAB4D5A00DDC0BF /* Carpark.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8886301AAB4D5A00DDC0BF /* Carpark.m */; };
 		9A8886341AAB523900DDC0BF /* RequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8886331AAB523900DDC0BF /* RequestHelper.m */; };
@@ -46,6 +49,12 @@
 		9A25DFEA1AAB9FF70082E065 /* DirectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionsViewController.m; sourceTree = "<group>"; };
 		9A25DFEC1AABAA140082E065 /* TargetAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetAnnotation.h; sourceTree = "<group>"; };
 		9A25DFED1AABAA140082E065 /* TargetAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetAnnotation.m; sourceTree = "<group>"; };
+		9A25DFEF1AABB3CD0082E065 /* DirectionsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionsMapViewController.h; sourceTree = "<group>"; };
+		9A25DFF01AABB3CD0082E065 /* DirectionsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionsMapViewController.m; sourceTree = "<group>"; };
+		9A25DFF21AABB5940082E065 /* DirectionsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionsListViewController.h; sourceTree = "<group>"; };
+		9A25DFF31AABB5940082E065 /* DirectionsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionsListViewController.m; sourceTree = "<group>"; };
+		9A25DFF51AABB9090082E065 /* StepCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepCell.h; sourceTree = "<group>"; };
+		9A25DFF61AABB9090082E065 /* StepCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepCell.m; sourceTree = "<group>"; };
 		9A88862C1AAB36FB00DDC0BF /* CustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTextField.h; sourceTree = "<group>"; };
 		9A88862D1AAB36FB00DDC0BF /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTextField.m; sourceTree = "<group>"; };
 		9A88862F1AAB4D5A00DDC0BF /* Carpark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Carpark.h; sourceTree = "<group>"; };
@@ -101,6 +110,10 @@
 				9A8886361AAB540E00DDC0BF /* CarparkListViewController.m */,
 				9A25DFE91AAB9FF70082E065 /* DirectionsViewController.h */,
 				9A25DFEA1AAB9FF70082E065 /* DirectionsViewController.m */,
+				9A25DFF21AABB5940082E065 /* DirectionsListViewController.h */,
+				9A25DFF31AABB5940082E065 /* DirectionsListViewController.m */,
+				9A25DFEF1AABB3CD0082E065 /* DirectionsMapViewController.h */,
+				9A25DFF01AABB3CD0082E065 /* DirectionsMapViewController.m */,
 				9A8886421AAB5E0D00DDC0BF /* LoadingViewController.h */,
 				9A8886431AAB5E0D00DDC0BF /* LoadingViewController.m */,
 				9A1C55D61AAB1BD500EDF846 /* LoginViewController.h */,
@@ -168,6 +181,8 @@
 			children = (
 				9A88863C1AAB5AD500DDC0BF /* CarparkCell.h */,
 				9A88863D1AAB5AD500DDC0BF /* CarparkCell.m */,
+				9A25DFF51AABB9090082E065 /* StepCell.h */,
+				9A25DFF61AABB9090082E065 /* StepCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -352,10 +367,13 @@
 				9A25DFEB1AAB9FF70082E065 /* DirectionsViewController.m in Sources */,
 				9A88862E1AAB36FB00DDC0BF /* CustomTextField.m in Sources */,
 				9ABEBCB61AAB127500866696 /* main.m in Sources */,
+				9A25DFF41AABB5940082E065 /* DirectionsListViewController.m in Sources */,
+				9A25DFF11AABB3CD0082E065 /* DirectionsMapViewController.m in Sources */,
 				9A88863A1AAB551700DDC0BF /* MainNavigationController.m in Sources */,
 				9A25DFEE1AABAA140082E065 /* TargetAnnotation.m in Sources */,
 				9A25DFE81AAB89F50082E065 /* UIBAlertView.m in Sources */,
 				9A8886341AAB523900DDC0BF /* RequestHelper.m in Sources */,
+				9A25DFF71AABB9090082E065 /* StepCell.m in Sources */,
 				9A88864B1AAB6FB900DDC0BF /* API.m in Sources */,
 				9A1C55D81AAB1BD500EDF846 /* LoginViewController.m in Sources */,
 			);
