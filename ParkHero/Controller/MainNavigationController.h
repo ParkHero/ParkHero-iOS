@@ -1,5 +1,5 @@
 //
-//  CarparkListViewController.h
+//  MainNavigationController.h
 //  ParkHero
 //
 //  Created by Dylan Marriott on 07/03/15.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CarparkListViewController : UITableViewController
+@interface MainNavigationController : UINavigationController
 
 @end

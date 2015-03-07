@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "User.h"
+#import "MainNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -23,8 +24,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    if ([UserDefaults instance].currentUser) {
-    
+    if (![UserDefaults instance].currentUser) {
+        MainNavigationController *mainNavigationController = [[MainNavigationController alloc] init];
+        self.window.rootViewController = mainNavigationController;
     } else {
         LoginViewController *loginViewController = [[LoginViewController alloc] init];
         self.window.rootViewController = loginViewController;
