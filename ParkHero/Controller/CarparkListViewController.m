@@ -11,6 +11,7 @@
 #import "CarparkCell.h"
 #import "LoadingViewController.h"
 #import "User.h"
+#import "DirectionsViewController.h"
 
 @interface CarparkListViewController () <CLLocationManagerDelegate>
 @end
@@ -36,10 +37,6 @@
     _locationManager.distanceFilter = 100;
     _locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     [_locationManager requestWhenInUseAuthorization];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
     [_locationManager startUpdatingLocation];
 }
 
@@ -67,7 +64,8 @@
                 carpark.location = loc;
                 [carparks addObject:carpark];
             }
-            _carparks = [NSArray arrayWithArray:carparks];
+            NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"distance" ascending:YES];
+            _carparks = [carparks sortedArrayUsingDescriptors:@[sort]];
         } else {
             
         }
@@ -94,6 +92,9 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    Carpark *cp = _carparks[indexPath.row];
+    DirectionsViewController *vc = [[DirectionsViewController alloc] initWithCarpark:cp currentLocation:_currentLocation];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - CLLocationManagerDelegate
