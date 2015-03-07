@@ -11,6 +11,15 @@
 @implementation LoadingViewController {
     UIView *_container;
     UIImageView *_imageView;
+    NSString *_message;
+    NSDate *_opened;
+}
+
+- (instancetype)initWithMessage:(NSString *)message {
+    if (self = [super init]) {
+        _message = message;
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
@@ -31,7 +40,7 @@
     label.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
     label.textColor = [UIColor colorWithWhite:0.6 alpha:1.0];
     label.textAlignment = NSTextAlignmentCenter;
-    label.text = @"We're searching for\ncar parks near you.";
+    label.text = _message;
     label.numberOfLines = 2;
     [_container addSubview:label];
 }
@@ -60,9 +69,24 @@
     } completion:^(BOOL finished) {
         [self beat];
     }];
+    
+    _opened = [NSDate date];
 }
 
-- (void)close {
+- (void)closeWithCompletion:(void (^)(void))completion {
+    if (!_opened) {
+        return;
+    }
+    
+    NSTimeInterval diff = [[NSDate date] timeIntervalSinceDate:_opened];
+    if (diff < 2) {
+        [self performSelector:@selector(doClose:) withObject:completion afterDelay:(2 - diff)];
+    } else {
+        [self doClose:completion];
+    }
+}
+
+- (void)doClose:(void (^)(void))completion {
     [UIView animateWithDuration:0.3 animations:^{
         _container.frame = CGRectMake(_container.frame.origin.x, self.view.frame.size.height, _container.frame.size.width, _container.frame.size.height);
     }];
@@ -70,7 +94,7 @@
     [UIView animateWithDuration:0.3 delay:0.2 options:0 animations:^{
         self.view.backgroundColor = [UIColor clearColor];
     } completion:^(BOOL finished) {
-        [self dismissViewControllerAnimated:NO completion:nil];
+        [self dismissViewControllerAnimated:NO completion:completion];
     }];
 }
 

@@ -24,7 +24,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    if (![UserDefaults instance].currentUser) {
+    if ([UserDefaults instance].currentUser) {
         MainNavigationController *mainNavigationController = [[MainNavigationController alloc] init];
         self.window.rootViewController = mainNavigationController;
     } else {

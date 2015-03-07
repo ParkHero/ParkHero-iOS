@@ -60,8 +60,7 @@
 #pragma mark - CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     _currentLocation = [locations lastObject];
-    
-    [_loadingViewController performSelector:@selector(close) withObject:nil afterDelay:3.0];
+    [_loadingViewController closeWithCompletion:nil];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
@@ -70,8 +69,10 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    _loadingViewController = [[LoadingViewController alloc] init];
-    [self presentViewController:_loadingViewController animated:NO completion:nil];
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        _loadingViewController = [[LoadingViewController alloc] initWithMessage:@"We're searching for\ncar parks near you."];
+        [self presentViewController:_loadingViewController animated:NO completion:nil];
+    }
 }
 
 @end

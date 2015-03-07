@@ -10,6 +10,7 @@
 
 @interface LoadingViewController : UIViewController
 
-- (void)close;
+- (instancetype)initWithMessage:(NSString *)message;
+- (void)closeWithCompletion:(void (^)(void))completion;
 
 @end
