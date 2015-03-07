@@ -11,12 +11,14 @@
 		9A1C55D81AAB1BD500EDF846 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C55D71AAB1BD500EDF846 /* LoginViewController.m */; };
 		9A1C55DE1AAB20F300EDF846 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C55DD1AAB20F300EDF846 /* User.m */; };
 		9A1C55E21AAB217D00EDF846 /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C55E11AAB217D00EDF846 /* UserDefaults.m */; };
-		9A88862B1AAB317000DDC0BF /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88862A1AAB317000DDC0BF /* LoginView.m */; };
 		9A88862E1AAB36FB00DDC0BF /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88862D1AAB36FB00DDC0BF /* CustomTextField.m */; };
 		9A8886311AAB4D5A00DDC0BF /* Carpark.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8886301AAB4D5A00DDC0BF /* Carpark.m */; };
 		9A8886341AAB523900DDC0BF /* RequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8886331AAB523900DDC0BF /* RequestHelper.m */; };
 		9A8886371AAB540E00DDC0BF /* CarparkListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8886361AAB540E00DDC0BF /* CarparkListViewController.m */; };
 		9A88863A1AAB551700DDC0BF /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8886391AAB551700DDC0BF /* MainNavigationController.m */; };
+		9A88863E1AAB5AD500DDC0BF /* CarparkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88863D1AAB5AD500DDC0BF /* CarparkCell.m */; };
+		9A8886441AAB5E0D00DDC0BF /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8886431AAB5E0D00DDC0BF /* LoadingViewController.m */; };
+		9A8886471AAB5EB300DDC0BF /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8886461AAB5EB300DDC0BF /* LoginView.m */; };
 		9ABEBCB61AAB127500866696 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEBCB51AAB127500866696 /* main.m */; };
 		9ABEBCB91AAB127500866696 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEBCB81AAB127500866696 /* AppDelegate.m */; };
 		9ABEBCC11AAB127500866696 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ABEBCC01AAB127500866696 /* Images.xcassets */; };
@@ -34,8 +36,6 @@
 		9A1C55DD1AAB20F300EDF846 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		9A1C55E01AAB217D00EDF846 /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
 		9A1C55E11AAB217D00EDF846 /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
-		9A8886291AAB317000DDC0BF /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
-		9A88862A1AAB317000DDC0BF /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 		9A88862C1AAB36FB00DDC0BF /* CustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTextField.h; sourceTree = "<group>"; };
 		9A88862D1AAB36FB00DDC0BF /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTextField.m; sourceTree = "<group>"; };
 		9A88862F1AAB4D5A00DDC0BF /* Carpark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Carpark.h; sourceTree = "<group>"; };
@@ -46,6 +46,12 @@
 		9A8886361AAB540E00DDC0BF /* CarparkListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkListViewController.m; sourceTree = "<group>"; };
 		9A8886381AAB551700DDC0BF /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
 		9A8886391AAB551700DDC0BF /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
+		9A88863C1AAB5AD500DDC0BF /* CarparkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkCell.h; sourceTree = "<group>"; };
+		9A88863D1AAB5AD500DDC0BF /* CarparkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkCell.m; sourceTree = "<group>"; };
+		9A8886421AAB5E0D00DDC0BF /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
+		9A8886431AAB5E0D00DDC0BF /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
+		9A8886451AAB5EB300DDC0BF /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		9A8886461AAB5EB300DDC0BF /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 		9ABEBCB01AAB127500866696 /* ParkHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABEBCB41AAB127500866696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ABEBCB51AAB127500866696 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,6 +87,8 @@
 			children = (
 				9A8886351AAB540E00DDC0BF /* CarparkListViewController.h */,
 				9A8886361AAB540E00DDC0BF /* CarparkListViewController.m */,
+				9A8886421AAB5E0D00DDC0BF /* LoadingViewController.h */,
+				9A8886431AAB5E0D00DDC0BF /* LoadingViewController.m */,
 				9A1C55D61AAB1BD500EDF846 /* LoginViewController.h */,
 				9A1C55D71AAB1BD500EDF846 /* LoginViewController.m */,
 				9A8886381AAB551700DDC0BF /* MainNavigationController.h */,
@@ -116,10 +124,19 @@
 			children = (
 				9A88862C1AAB36FB00DDC0BF /* CustomTextField.h */,
 				9A88862D1AAB36FB00DDC0BF /* CustomTextField.m */,
-				9A8886291AAB317000DDC0BF /* LoginView.h */,
-				9A88862A1AAB317000DDC0BF /* LoginView.m */,
+				9A8886451AAB5EB300DDC0BF /* LoginView.h */,
+				9A8886461AAB5EB300DDC0BF /* LoginView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9A88863B1AAB5AA500DDC0BF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9A88863C1AAB5AD500DDC0BF /* CarparkCell.h */,
+				9A88863D1AAB5AD500DDC0BF /* CarparkCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		9ABEBCA71AAB127500866696 = {
@@ -143,6 +160,7 @@
 		9ABEBCB21AAB127500866696 /* ParkHero */ = {
 			isa = PBXGroup;
 			children = (
+				9A88863B1AAB5AA500DDC0BF /* Cell */,
 				9A1C55D51AAB1AF200EDF846 /* Controller */,
 				9A1C55DF1AAB215100EDF846 /* Helper */,
 				9A1C55DA1AAB1CE900EDF846 /* Model */,
@@ -279,9 +297,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A8886311AAB4D5A00DDC0BF /* Carpark.m in Sources */,
-				9A88862B1AAB317000DDC0BF /* LoginView.m in Sources */,
 				9A1C55DE1AAB20F300EDF846 /* User.m in Sources */,
+				9A8886471AAB5EB300DDC0BF /* LoginView.m in Sources */,
+				9A8886441AAB5E0D00DDC0BF /* LoadingViewController.m in Sources */,
 				9A8886371AAB540E00DDC0BF /* CarparkListViewController.m in Sources */,
+				9A88863E1AAB5AD500DDC0BF /* CarparkCell.m in Sources */,
 				9A1C55E21AAB217D00EDF846 /* UserDefaults.m in Sources */,
 				9ABEBCB91AAB127500866696 /* AppDelegate.m in Sources */,
 				9A88862E1AAB36FB00DDC0BF /* CustomTextField.m in Sources */,
