@@ -112,7 +112,11 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     _freeContainer.backgroundColor = [self colorForLabel];
-    
+}
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:highlighted animated:animated];
+    _freeContainer.backgroundColor = [self colorForLabel];
 }
 
 - (UIColor *)colorForLabel {

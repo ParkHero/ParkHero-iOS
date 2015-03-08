@@ -14,11 +14,13 @@
 @implementation CheckOutViewController {
     Carpark *_carpark;
     UIImageView *_imageView;
+    NSInteger _cost;
 }
 
-- (instancetype)initWithCarpark:(Carpark *)carpark {
+- (instancetype)initWithCarpark:(Carpark *)carpark cost:(NSInteger)cost {
     if (self = [super init]) {
         _carpark = carpark;
+        _cost = cost;
     }
     return self;
 }
@@ -64,7 +66,7 @@
     UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 340, self.view.frame.size.width - 80, 40)];
     timeLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:24];
     timeLabel.textColor = [UIColor colorWithWhite:0.15 alpha:1.0];
-    timeLabel.text = [NSString stringWithFormat:@"%.0f Sfr.", 2.];
+    timeLabel.text = [NSString stringWithFormat:@"%.0f Sfr.", _cost / 100.];
     timeLabel.textAlignment = NSTextAlignmentRight;
     [self.view addSubview:timeLabel];
     

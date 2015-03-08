@@ -84,7 +84,7 @@
     NSMutableDictionary *jsonDict = [NSMutableDictionary dictionary];
     [jsonDict setObject:[UserDefaults instance].currentUser.token forKey:@"token"];
     NSData *json = [NSJSONSerialization dataWithJSONObject:jsonDict options:NSJSONWritingPrettyPrinted error:nil];
-    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[API checkInWithUUID:@"4"]]];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[API checkInWithUUID:@"19"]]];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:json];
     
@@ -105,7 +105,7 @@
     NSMutableDictionary *jsonDict = [NSMutableDictionary dictionary];
     [jsonDict setObject:[UserDefaults instance].currentUser.token forKey:@"token"];
     NSData *json = [NSJSONSerialization dataWithJSONObject:jsonDict options:NSJSONWritingPrettyPrinted error:nil];
-    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[API checkOutWithUUID:@"4"]]];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[API checkOutWithUUID:@"19"]]];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:json];
     
@@ -115,7 +115,7 @@
             
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             Carpark *cp = [[Carpark alloc] initWithJson:json[@"carpark"]];
-            CheckOutViewController *vc = [[CheckOutViewController alloc] initWithCarpark:cp];
+            CheckOutViewController *vc = [[CheckOutViewController alloc] initWithCarpark:cp cost:[json[@"cost"] integerValue]];
             self.window.rootViewController = vc;
         } else {
             

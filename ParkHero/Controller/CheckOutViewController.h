@@ -12,6 +12,6 @@
 
 @interface CheckOutViewController : UIViewController
 
-- (instancetype)initWithCarpark:(Carpark *)carpark;
+- (instancetype)initWithCarpark:(Carpark *)carpark cost:(NSInteger)cost;
 
 @end
