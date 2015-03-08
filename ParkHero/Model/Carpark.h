@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    CarparkTypeDefault
+    CarparkTypeDefault,
+    CarparkTypeResidential
 } CarparkType;
 
 

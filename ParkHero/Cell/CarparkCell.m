@@ -17,6 +17,7 @@
     UIView *_freeContainer;
     UILabel *_freeLabel;
     UILabel *_priceLabel;
+    UIView *_typeIcon;
 }
 
 - (instancetype)initWithCarpark:(Carpark *)carpark {
@@ -77,6 +78,15 @@
         
         _priceLabel.attributedText = attributedString;
         [self.contentView addSubview:_priceLabel];
+        
+        
+        _typeIcon = [[UIView alloc] init];
+        _typeIcon.layer.cornerRadius = 6;
+        _typeIcon.backgroundColor = [UIColor colorWithRed:0.25 green:0.62 blue:0.92 alpha:1.00];
+        if (_carpark.type != 1) {
+            _typeIcon.hidden = YES;
+        }
+        [self.contentView addSubview:_typeIcon];
     }
     return self;
 }
@@ -99,7 +109,9 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    CGSize titleSize = [_titleLabel.text sizeWithAttributes:@{NSFontAttributeName: _titleLabel.font}];
     _titleLabel.frame = CGRectMake(20, 20, self.contentView.frame.size.width - 140, 28);
+    _typeIcon.frame = CGRectMake(20 + titleSize.width + 8, 29, 12, 12);
     _imageView.frame = CGRectMake(self.contentView.frame.size.width - 120, 20, 100, self.contentView.frame.size.height - 40);
     CGSize freeSize = [_freeLabel.text sizeWithAttributes:@{NSFontAttributeName: _freeLabel.font}];
     _freeContainer.frame  = CGRectMake(20, 60, freeSize.width + 16, freeSize.height + 10);
