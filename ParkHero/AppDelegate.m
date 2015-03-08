@@ -13,6 +13,7 @@
 #import <EstimoteSDK/ESTBeaconManager.h>
 #import <CoreLocation/CoreLocation.h>
 #import "CheckInViewController.h"
+#import "CheckOutViewController.h"
 #import "Carpark.h"
 
 @interface AppDelegate () <ESTBeaconManagerDelegate, CLLocationManagerDelegate>
@@ -24,6 +25,7 @@
     CLLocationManager *_locationManager;
     CLBeaconRegion *_region;
     BOOL _checkinLocked;
+    BOOL _checkinPending;
 }
 
 
@@ -68,16 +70,21 @@
     CLBeacon *foundBeacon = [beacons firstObject];
     NSLog(@"distance: %ld", (long)foundBeacon.rssi);
     if(foundBeacon.rssi > -60 && foundBeacon.rssi < 0 && !_checkinLocked && [UserDefaults instance].currentUser) {
-        [self openCheckIn];
+        if (_checkinPending) {
+            [self openCheckOut];
+        } else {
+            [self openCheckIn];
+        }
     }
 }
 
 - (void)openCheckIn {
     _checkinLocked = YES;
+    _checkinPending = YES;
     NSMutableDictionary *jsonDict = [NSMutableDictionary dictionary];
     [jsonDict setObject:[UserDefaults instance].currentUser.token forKey:@"token"];
     NSData *json = [NSJSONSerialization dataWithJSONObject:jsonDict options:NSJSONWritingPrettyPrinted error:nil];
-    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[API checkinWithUUID:@"4"]]];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[API checkInWithUUID:@"4"]]];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:json];
     
@@ -91,6 +98,33 @@
             
         }
     }];
+}
+
+- (void)openCheckOut {
+    _checkinLocked = YES;
+    NSMutableDictionary *jsonDict = [NSMutableDictionary dictionary];
+    [jsonDict setObject:[UserDefaults instance].currentUser.token forKey:@"token"];
+    NSData *json = [NSJSONSerialization dataWithJSONObject:jsonDict options:NSJSONWritingPrettyPrinted error:nil];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[API checkOutWithUUID:@"4"]]];
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:json];
+    
+    [RequestHelper startRequest:request completion:^(BOOL success, NSData *data, NSError *error) {
+        if (success) {
+            _checkinPending = NO;
+            
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            Carpark *cp = [[Carpark alloc] initWithJson:json[@"carpark"]];
+            CheckOutViewController *vc = [[CheckOutViewController alloc] initWithCarpark:cp];
+            self.window.rootViewController = vc;
+        } else {
+            
+        }
+    }];
+}
+
+- (void)freeCheckIn {
+    _checkinLocked = NO;
 }
 
 @end

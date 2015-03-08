@@ -8,6 +8,7 @@
 
 #import "CheckInViewController.h"
 #import "Carpark.h"
+#import "IndoorMapNavigationController.h"
 
 @implementation CheckInViewController {
     Carpark *_carpark;
@@ -36,6 +37,8 @@
     _imageView.image = _carpark.image;
     _imageView.layer.cornerRadius = _imageView.frame.size.width / 2;
     _imageView.clipsToBounds = YES;
+    _imageView.userInteractionEnabled = YES;
+    [_imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openMap:)]];
     [circle addSubview:_imageView];
     
     UILabel *welcomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 235, self.view.frame.size.width, 140)];
@@ -89,6 +92,11 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
+}
+
+- (void)openMap:(id)sender {
+    IndoorMapNavigationController *nv = [[IndoorMapNavigationController alloc] init];
+    [self presentViewController:nv animated:YES completion:nil];
 }
 
 @end
