@@ -45,10 +45,18 @@
             for (NSDictionary *jsonCheckIn in jsonCheckIns) {
                 CheckIn *checkIn = [[CheckIn alloc] init];
                 checkIn.identifier = jsonCheckIn[@"id"];
-                checkIn.checkinDate = [dateFormatter dateFromString:jsonCheckIn[@"checkin"]];
-                checkIn.checkoutDate = [dateFormatter dateFromString:jsonCheckIn[@"checkout"]];
-                checkIn.duration = [jsonCheckIn[@"duration"] integerValue];
-                checkIn.cost = [jsonCheckIn[@"cost"] integerValue];
+                if (![jsonCheckIn[@"checkin"] isKindOfClass:[NSNull class]]) {
+                    checkIn.checkinDate = [dateFormatter dateFromString:jsonCheckIn[@"checkin"]];
+                }
+                if (![jsonCheckIn[@"checkout"] isKindOfClass:[NSNull class]]) {
+                    checkIn.checkoutDate = [dateFormatter dateFromString:jsonCheckIn[@"checkout"]];
+                }
+                if (![jsonCheckIn[@"duration"] isKindOfClass:[NSNull class]]) {
+                    checkIn.duration = [jsonCheckIn[@"duration"] integerValue];
+                }
+                if (![jsonCheckIn[@"cost"] isKindOfClass:[NSNull class]]) {
+                    checkIn.cost = [jsonCheckIn[@"cost"] integerValue];
+                }
                 checkIn.carpark = [[Carpark alloc] initWithJson:jsonCheckIn[@"carpark"]];
                 [checkIns addObject:checkIn];
             }
