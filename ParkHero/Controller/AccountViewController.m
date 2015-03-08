@@ -40,6 +40,7 @@
             NSArray *jsonCheckIns = json[@"checkins"];
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSSSS"];
+            [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
             NSMutableArray *checkIns = [NSMutableArray array];
             for (NSDictionary *jsonCheckIn in jsonCheckIns) {
                 CheckIn *checkIn = [[CheckIn alloc] init];
