@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class CustomRefreshControl;
+
 @interface CarparkListViewController : UITableViewController
+
+@property (nonatomic) CustomRefreshControl *customRefreshControl;
 
 @end

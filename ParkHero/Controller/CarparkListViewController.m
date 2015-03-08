@@ -13,6 +13,7 @@
 #import "User.h"
 #import "DirectionsViewController.h"
 #import "AccountNavigationController.h"
+#import "CustomRefreshControl.h"
 
 @interface CarparkListViewController () <CLLocationManagerDelegate>
 @end
@@ -31,6 +32,17 @@
     self.title = @"ParkHero";
     _first = YES;
     
+    CGFloat customRefreshControlHeight = 80.0f;
+    CGFloat customRefreshControlWidth = self.view.frame.size.width;
+    CGRect customRefreshControlFrame = CGRectMake(0.0f,
+                                                  -customRefreshControlHeight,
+                                                  customRefreshControlWidth,
+                                                  customRefreshControlHeight);
+    
+    self.customRefreshControl = [[CustomRefreshControl alloc] initWithFrame:customRefreshControlFrame];
+    [self.customRefreshControl addTarget:self action:@selector(pullToReload) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.customRefreshControl];
+    
     UIBarButtonItem *accountItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"User"] style:UIBarButtonItemStylePlain target:self action:@selector(openAccount:)];
     self.navigationItem.leftBarButtonItem = accountItem;
     
@@ -45,6 +57,12 @@
     
     _loadingViewController = [[LoadingViewController alloc] initWithMessage:@"We're searching for\ncar parks near you."];
     [self presentViewController:_loadingViewController animated:NO completion:nil];
+}
+
+- (void)pullToReload {
+    _loadingViewController = [[LoadingViewController alloc] initWithMessage:@"We're searching for\ncar parks near you."];
+    [self presentViewController:_loadingViewController animated:NO completion:nil];
+    [self fetchData];
 }
 
 - (void)fetchData {
@@ -112,5 +130,15 @@
     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [av show];
 }
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    [self.customRefreshControl scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.customRefreshControl scrollViewDidScroll:scrollView];
+}
+
 
 @end
