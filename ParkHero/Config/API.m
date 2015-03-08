@@ -26,4 +26,8 @@
     return [[self baseUrl] stringByAppendingString:@"/carparks"];
 }
 
++ (NSString *)checkinWithUUID:(NSString *)UUID {
+    return [[self baseUrl] stringByAppendingString:[NSString stringWithFormat:@"/carparks/%@/checkin", UUID]];
+}
+
 @end

@@ -10,8 +10,10 @@
 
 @interface API : NSObject
 
++ (NSString *)baseUrl;
 + (NSString *)registerUrl;
 + (NSString *)loginUrl;
 + (NSString *)carparkListUrl;
++ (NSString *)checkinWithUUID:(NSString *)UUID;
 
 @end

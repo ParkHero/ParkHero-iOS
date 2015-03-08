@@ -25,7 +25,7 @@
         [_carpark addObserver:self forKeyPath:@"image" options:0 context:nil];
         
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.text = [_carpark.name stringByReplacingOccurrencesOfString:@"Marriot" withString:@"Marriott"];
+        _titleLabel.text = _carpark.name;
         _titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20];
         _titleLabel.textColor = [UIColor colorWithWhite:0.15 alpha:1.0];
         [self.contentView addSubview:_titleLabel];

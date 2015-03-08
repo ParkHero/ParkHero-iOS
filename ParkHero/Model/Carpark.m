@@ -39,6 +39,23 @@
     [aCoder encodeObject:self.address forKey:@"address"];
 }
 
+- (instancetype)initWithJson:(NSDictionary *)json {
+    if (self = [super init]) {
+        self.identifier = json[@"id"];
+        self.name = [json[@"name"] stringByReplacingOccurrencesOfString:@"Marriot" withString:@"Marriott"];;
+        self.type = [json[@"type"] integerValue];
+        self.address = json[@"address"];
+        self.free = [json[@"free"] integerValue];
+        self.capacity = [json[@"capacity"] integerValue];
+        self.cost = [json[@"cost"] integerValue];
+        self.distance = [json[@"distance"] integerValue];
+        [self downloadImage:[[API baseUrl] stringByAppendingString:json[@"image"]]];
+        CLLocation *loc = [[CLLocation alloc] initWithLatitude:[json[@"latitude"] doubleValue] longitude:[json[@"longitude"] doubleValue]];
+        self.location = loc;
+    }
+    return self;
+}
+
 - (void)downloadImage:(NSString *)url {
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue]

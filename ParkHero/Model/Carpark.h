@@ -26,6 +26,7 @@ typedef enum {
 @property (nonatomic) NSInteger cost;
 @property (nonatomic) NSString *address;
 
+- (instancetype)initWithJson:(NSDictionary *)json;
 - (void)downloadImage:(NSString *)url;
 
 @end

@@ -38,6 +38,9 @@
     _locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     [_locationManager requestWhenInUseAuthorization];
     [_locationManager startUpdatingLocation];
+    
+    _loadingViewController = [[LoadingViewController alloc] initWithMessage:@"We're searching for\ncar parks near you."];
+    [self presentViewController:_loadingViewController animated:NO completion:nil];
 }
 
 - (void)fetchData {
@@ -50,18 +53,7 @@
             NSArray *jsonCarparks = json[@"carparks"];
             NSMutableArray *carparks = [NSMutableArray array];
             for (NSDictionary *jsonCarpark in jsonCarparks) {
-                Carpark *carpark = [[Carpark alloc] init];
-                carpark.identifier = jsonCarpark[@"id"];
-                carpark.name = jsonCarpark[@"name"];
-                carpark.type = [jsonCarpark[@"type"] integerValue];
-                carpark.address = jsonCarpark[@"address"];
-                carpark.free = [jsonCarpark[@"free"] integerValue];
-                carpark.capacity = [jsonCarpark[@"capacity"] integerValue];
-                carpark.cost = [jsonCarpark[@"cost"] integerValue];
-                carpark.distance = [jsonCarpark[@"distance"] integerValue];
-                [carpark downloadImage:jsonCarpark[@"image"]];
-                CLLocation *loc = [[CLLocation alloc] initWithLatitude:[jsonCarpark[@"latitude"] doubleValue] longitude:[jsonCarpark[@"longitude"] doubleValue]];
-                carpark.location = loc;
+                Carpark *carpark = [[Carpark alloc] initWithJson:jsonCarpark];
                 [carparks addObject:carpark];
             }
             NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"distance" ascending:YES];
@@ -110,13 +102,6 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [av show];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        _loadingViewController = [[LoadingViewController alloc] initWithMessage:@"We're searching for\ncar parks near you."];
-        [self presentViewController:_loadingViewController animated:NO completion:nil];
-    }
 }
 
 @end
