@@ -12,6 +12,7 @@
 #import "LoadingViewController.h"
 #import "User.h"
 #import "DirectionsViewController.h"
+#import "AccountNavigationController.h"
 
 @interface CarparkListViewController () <CLLocationManagerDelegate>
 @end
@@ -29,6 +30,9 @@
     
     self.title = @"ParkHero";
     _first = YES;
+    
+    UIBarButtonItem *accountItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"User"] style:UIBarButtonItemStylePlain target:self action:@selector(openAccount:)];
+    self.navigationItem.leftBarButtonItem = accountItem;
     
     self.tableView.tableFooterView = [[UIView alloc] init];
     
@@ -64,6 +68,11 @@
         [self.tableView reloadData];
         [_loadingViewController closeWithCompletion:nil];
     }];
+}
+
+- (void)openAccount:(id)sender {
+    AccountNavigationController *nc = [[AccountNavigationController alloc] init];
+    [self presentViewController:nc animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource

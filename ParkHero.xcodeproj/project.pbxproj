@@ -21,6 +21,10 @@
 		9A25DFFD1AAC07FB0082E065 /* IndoorMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A25DFFC1AAC07FB0082E065 /* IndoorMapViewController.m */; };
 		9A25E0001AAC08790082E065 /* IndoorMapNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A25DFFF1AAC08790082E065 /* IndoorMapNavigationController.m */; };
 		9A25E0031AAC0E1A0082E065 /* CheckOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A25E0021AAC0E1A0082E065 /* CheckOutViewController.m */; };
+		9A25E0061AAC359B0082E065 /* AccountNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A25E0051AAC359B0082E065 /* AccountNavigationController.m */; };
+		9A25E0091AAC35A90082E065 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A25E0081AAC35A90082E065 /* AccountViewController.m */; };
+		9A25E00C1AAC38BC0082E065 /* CheckInCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A25E00B1AAC38BC0082E065 /* CheckInCell.m */; };
+		9A25E00F1AAC3A940082E065 /* CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A25E00E1AAC3A940082E065 /* CheckIn.m */; };
 		9A88862E1AAB36FB00DDC0BF /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88862D1AAB36FB00DDC0BF /* CustomTextField.m */; };
 		9A8886311AAB4D5A00DDC0BF /* Carpark.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8886301AAB4D5A00DDC0BF /* Carpark.m */; };
 		9A8886341AAB523900DDC0BF /* RequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8886331AAB523900DDC0BF /* RequestHelper.m */; };
@@ -67,6 +71,14 @@
 		9A25DFFF1AAC08790082E065 /* IndoorMapNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndoorMapNavigationController.m; sourceTree = "<group>"; };
 		9A25E0011AAC0E1A0082E065 /* CheckOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckOutViewController.h; sourceTree = "<group>"; };
 		9A25E0021AAC0E1A0082E065 /* CheckOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckOutViewController.m; sourceTree = "<group>"; };
+		9A25E0041AAC359B0082E065 /* AccountNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountNavigationController.h; sourceTree = "<group>"; };
+		9A25E0051AAC359B0082E065 /* AccountNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountNavigationController.m; sourceTree = "<group>"; };
+		9A25E0071AAC35A90082E065 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		9A25E0081AAC35A90082E065 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		9A25E00A1AAC38BC0082E065 /* CheckInCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInCell.h; sourceTree = "<group>"; };
+		9A25E00B1AAC38BC0082E065 /* CheckInCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInCell.m; sourceTree = "<group>"; };
+		9A25E00D1AAC3A940082E065 /* CheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIn.h; sourceTree = "<group>"; };
+		9A25E00E1AAC3A940082E065 /* CheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIn.m; sourceTree = "<group>"; };
 		9A88862C1AAB36FB00DDC0BF /* CustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTextField.h; sourceTree = "<group>"; };
 		9A88862D1AAB36FB00DDC0BF /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTextField.m; sourceTree = "<group>"; };
 		9A88862F1AAB4D5A00DDC0BF /* Carpark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Carpark.h; sourceTree = "<group>"; };
@@ -118,6 +130,10 @@
 		9A1C55D51AAB1AF200EDF846 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9A25E0041AAC359B0082E065 /* AccountNavigationController.h */,
+				9A25E0051AAC359B0082E065 /* AccountNavigationController.m */,
+				9A25E0071AAC35A90082E065 /* AccountViewController.h */,
+				9A25E0081AAC35A90082E065 /* AccountViewController.m */,
 				9A8886351AAB540E00DDC0BF /* CarparkListViewController.h */,
 				9A8886361AAB540E00DDC0BF /* CarparkListViewController.m */,
 				9A25DFF81AABDE450082E065 /* CheckInViewController.h */,
@@ -149,6 +165,8 @@
 			children = (
 				9A88862F1AAB4D5A00DDC0BF /* Carpark.h */,
 				9A8886301AAB4D5A00DDC0BF /* Carpark.m */,
+				9A25E00D1AAC3A940082E065 /* CheckIn.h */,
+				9A25E00E1AAC3A940082E065 /* CheckIn.m */,
 				9A1C55DC1AAB20F300EDF846 /* User.h */,
 				9A1C55DD1AAB20F300EDF846 /* User.m */,
 			);
@@ -201,6 +219,8 @@
 			children = (
 				9A88863C1AAB5AD500DDC0BF /* CarparkCell.h */,
 				9A88863D1AAB5AD500DDC0BF /* CarparkCell.m */,
+				9A25E00A1AAC38BC0082E065 /* CheckInCell.h */,
+				9A25E00B1AAC38BC0082E065 /* CheckInCell.m */,
 				9A25DFF51AABB9090082E065 /* StepCell.h */,
 				9A25DFF61AABB9090082E065 /* StepCell.m */,
 			);
@@ -388,10 +408,13 @@
 				9A8886441AAB5E0D00DDC0BF /* LoadingViewController.m in Sources */,
 				9A8886371AAB540E00DDC0BF /* CarparkListViewController.m in Sources */,
 				9A88863E1AAB5AD500DDC0BF /* CarparkCell.m in Sources */,
+				9A25E00C1AAC38BC0082E065 /* CheckInCell.m in Sources */,
 				9A1C55E21AAB217D00EDF846 /* UserDefaults.m in Sources */,
+				9A25E0061AAC359B0082E065 /* AccountNavigationController.m in Sources */,
 				9ABEBCB91AAB127500866696 /* AppDelegate.m in Sources */,
 				9A25DFEB1AAB9FF70082E065 /* DirectionsViewController.m in Sources */,
 				9A88862E1AAB36FB00DDC0BF /* CustomTextField.m in Sources */,
+				9A25E0091AAC35A90082E065 /* AccountViewController.m in Sources */,
 				9ABEBCB61AAB127500866696 /* main.m in Sources */,
 				9A25DFF41AABB5940082E065 /* DirectionsListViewController.m in Sources */,
 				9A25DFF11AABB3CD0082E065 /* DirectionsMapViewController.m in Sources */,
@@ -399,6 +422,7 @@
 				9A25DFEE1AABAA140082E065 /* TargetAnnotation.m in Sources */,
 				9A25DFE81AAB89F50082E065 /* UIBAlertView.m in Sources */,
 				9A25DFFA1AABDE450082E065 /* CheckInViewController.m in Sources */,
+				9A25E00F1AAC3A940082E065 /* CheckIn.m in Sources */,
 				9A8886341AAB523900DDC0BF /* RequestHelper.m in Sources */,
 				9A25E0001AAC08790082E065 /* IndoorMapNavigationController.m in Sources */,
 				9A25DFF71AABB9090082E065 /* StepCell.m in Sources */,

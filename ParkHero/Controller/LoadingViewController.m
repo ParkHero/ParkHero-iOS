@@ -18,6 +18,7 @@
 - (instancetype)initWithMessage:(NSString *)message {
     if (self = [super init]) {
         _message = message;
+        self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     }
     return self;
 }
@@ -74,11 +75,7 @@
 }
 
 - (void)closeWithCompletion:(void (^)(void))completion {
-    if (!_opened) {
-        return;
-    }
-    
-    NSTimeInterval diff = [[NSDate date] timeIntervalSinceDate:_opened];
+    NSTimeInterval diff = _opened ? [[NSDate date] timeIntervalSinceDate:_opened] : 1;
     if (diff < 2) {
         [self performSelector:@selector(doClose:) withObject:completion afterDelay:(2 - diff)];
     } else {

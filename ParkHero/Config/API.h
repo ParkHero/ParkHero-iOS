@@ -16,5 +16,6 @@
 + (NSString *)carparkListUrl;
 + (NSString *)checkInWithUUID:(NSString *)UUID;
 + (NSString *)checkOutWithUUID:(NSString *)UUID;
++ (NSString *)checkInsUrl;
 
 @end
