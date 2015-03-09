@@ -8,7 +8,7 @@ The app shows you car parks close to your current location with useful informati
  
  --- 
   
-This project was creating at CodeFEST8, a hackathon focused on mobility. It's the result of less than two days of work, and therefore is still a work in progress.
+This project was created at CodeFEST8, a hackathon focused on mobility. It's the result of less than two days of work, and therefore is still a work in progress.
 
 
 ## Screenshots
